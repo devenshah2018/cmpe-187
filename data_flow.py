@@ -1,11 +1,11 @@
 # Merge two sorted arrays A and B into sorted array C
 def mergeArrays(A, B, m, n):
-    C = [None] * (m + n)
-    i = 0
-    j = 0
-    k = 0
+    C = [None] * (m + n)  # Initialize output array C
+    i = 0  # Array A index
+    j = 0  # Array B index
+    k = 0  # Array C index
 
-    # Loop through both arrays
+    # Loop through both arrays A and B
     while i < m and j < n:
         # Set C[kth] element to A[i] if A[i] < B[j], increment i and k
         if A[i] < B[j]:
@@ -18,13 +18,13 @@ def mergeArrays(A, B, m, n):
             j += 1
             k += 1
 
-    # Loop through and add remaining elements of A to C
+    # Loop through and add remaining elements of array A to array C
     while i < m:
         C[k] = A[i]
         i += 1
         k += 1
 
-    # Loop through and add remaining elements of B to C
+    # Loop through and add remaining elements of array B to array C
     while j < n:
         C[k] = B[j]
         j += 1
