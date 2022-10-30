@@ -7,7 +7,7 @@ class Child:
 
 # A function that takes a Child class as its input parameters and returns a ticket containing the list of competitions that the child can participate in
 def issue_ticket(Child):
-    competitions = ""  # Initialize ticket list
+    competitions = "No valid competitions."  # Initialize competition.
     if (Child.gender == "boy" and Child.age > 7 and Child.age < 10):  # First scenario
         competitions = "Storytelling"
 
