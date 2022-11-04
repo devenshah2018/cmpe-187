@@ -33,6 +33,11 @@ def nextDate(date):
     day = int(date[3:5])
     year = int(date[6:10])
 
+    # Check input range
+    if year < 1900 or year > 2099:
+        print("Year is out of range. Please enter a year that is inclusive between 1900 and 2099.")
+        return
+
     # Advances the day by one
     day += 1
 
@@ -65,10 +70,7 @@ def nextDate(date):
         year += 1
 
     # Formatting and printing out the date only if the year is between 1900 and 2099 inclusively
-    if (year <= 1900 or year >= 2099):
-        print("Year is out of range. Please enter a year that is inclusively between 1900 and 2099")
-        return
-    elif (len(str(month)) < 2 and len(str(day)) < 2):  # Add 0 before the month and day
+    if (len(str(month)) < 2 and len(str(day)) < 2):  # Add 0 before the month and day
         print("Next date: 0" + str(month) +
               "/0" + str(day) + "/" + str(year))
     elif (len(str(month)) < 2):  # Add 0 before the month
