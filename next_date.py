@@ -84,7 +84,10 @@ def nextDate(date):
 
 def main():
     date = input("Enter date (MM/DD/YYYY): ")
-    nextDate(date)
+    try:
+        nextDate(date)
+    except ValueError:
+        print('Please enter a valid date.')
 
 
 if __name__ == "__main__":
