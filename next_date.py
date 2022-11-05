@@ -2,11 +2,7 @@
 # Function that validates the format of the input date and raises an error if the input is not in the correct format
 def checkFormat(date):
     import datetime
-    try:
-        datetime.datetime.strptime(date, '%m/%d/%Y')
-    except ValueError:
-        raise ValueError(
-            "Incorrect format. Please enter the date in MM/DD/YYYY")
+    datetime.datetime.strptime(date, '%m/%d/%Y')
 
 
 # Function that checks if a year is a leap year
@@ -86,10 +82,12 @@ def nextDate(date):
 
 def main():
     date = input("Enter date (MM/DD/YYYY): ")
+
+    # Prints out the next date and raises a ValueError if the date is not in the correct format
     try:
         nextDate(date)
     except ValueError:
-        print('Please enter a valid date.')
+        print('Invalid format. Please enter a valid date using the format (MM/DD/YYYY).')
 
 
 if __name__ == "__main__":
